@@ -1,0 +1,400 @@
+<div class="container-fluid" style="background-image: url('');">
+  <div class="row">
+      <div class="col-lg-1" style="margin-left: 10px">
+          <img src="assets/Logo.png" style="width: 200px; margin-top: 20px;">
+      </div>
+      <div class="col-lg-11">
+    <ul class="nav" style="margin-left: 400px; margin-top: -20px;">
+          <li class="nav-item">
+            <a class="nav-link" href="#">OUR MENU</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">DOMINO'S STORES</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">GIFT CARD</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">CORPORATE ENQUIRY</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">CONTACT</a>
+            </li>
+          </ul>
+      </div>
+ </div>
+ <button type="button" class="btn btn-danger" style="margin-left: 1100px; margin-top:-70px;">Download App</button>
+
+<div class="row">
+  <div class="col-lg-12" style="background-color:silver; margin-bottom: 20px;">
+    <a href="">Home</a>
+  </div>
+</div>
+  
+
+<!--<div class="row">
+
+  
+  <div class="col-md-6 mb-4">
+    <div class="card example-1 scrollbar-ripe-malinka">
+    <div class="card-group">
+      <div class="card" *ngFor="let menu of menuList;let index = index;">
+        <img class="card-img-top" src="{{menu.img}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{menu.name}} :- {{menu.price}}.00 Rs</h5>
+          <p class="card-text"><button type="button" class="btn btn-success">Add to Cart</button></p>
+        </div>
+    </div>
+    <div class="card-group">
+      <div class="card" *ngFor="let menu of menuList2;let index = index;">
+        <img class="card-img-top" src="{{menu.img}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{menu.name}} :- {{menu.price}}.00 Rs</h5>
+          <p class="card-text"><button type="button" class="btn btn-success">Add to Cart</button></p>
+        </div>
+    </div>
+  </div>
+     
+ </div>
+
+  </div>
+  -->
+ 
+  <!-- Grid row -->
+<div class="row">
+
+  <!-- Grid column -->
+  <div class="col-md-6 mb-4">
+
+    <!-- Exaple 1 -->
+    <div class="card example-1 scrollbar-ripe-malinka" style="background-image: url('assets/wt3.webp');">
+      
+      <h3 id="section1" style="font-family: 'Noto Sans', sans-serif; margin-left: 20px;margin-top: 20px;color: aliceblue;"> <img src="assets/menu.png" alt="" style="height: 30px;width:30px;"><strong> Menu</strong></h3> 
+      <!--<button type="button" class="btn btn-primary" style="height: 50px; width:100px; margin-left:600px; margin-top: -20px;" (click)="openModal(template)">Add +</button>-->
+      <button type="button" class="btn btn-primary" (click)="openModal(template)" style="height: 50px; width:100px; margin-left:600px; margin-top: -20px;">Add</button>
+      <div class="card-group">
+      <div class="card-body"  *ngFor="let menu of menuList;let index = index;">
+        <img class="card-img-top" src="{{menu.img}}" alt="Card image cap" style="height: 200px; width: 300px;">
+        <h5 id="section1" style="font-family: 'Noto Sans', sans-serif;color: aliceblue;"><strong>{{menu.name}} :- {{menu.price}}.00 Rs</strong></h5>
+        <button type="button" class="btn btn-primary" (click)="selectItem(index)">Add to Cart</button>
+      </div>
+    </div>
+    
+
+    </div>
+    <!-- Exaple 1 -->
+
+  </div>
+  <!-- Grid column -->
+
+  <!-- Grid column -->
+  <div class="col-md-3 mb-4">
+
+    <!-- Exaple 1 -->
+    <div class="card example-1 square scrollbar-cyan bordered-cyan" style="background-image: url('assets/wt3.webp');">
+      <div class="card-body">
+        <h3 id="section1" style="font-family: 'Noto Sans', sans-serif; color: aliceblue;"><img src="assets/trolley.png" alt="" style="height: 30px;width:30px;"><strong> Cart</strong></h3>
+        <ul class="list-group" style="margin-bottom: 10px;">
+          <li class="list-group-item list-group-item-primary" *ngFor="let cart of cartList;let index = index;" ><img src="{{cart.img}}" alt="" style="height: 50px; width:50px; margin-right:10px;">{{cart.name}} - {{cart.price}}
+            <button type="button" class="btn btn-danger btn-float-right text-align right" (click)="delete(index);"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+              <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+            </svg></button>
+          </li>
+          
+        </ul>
+        <a href="" style="color: aliceblue; font-weight: 500;">Total: {{totalCount}}</a>
+        <button type="button" class="btn btn-primary" (click)="selectItem_2();" style="margin-left: 130px;">PlaceOrder</button>
+        
+      </div>
+    </div>
+    <!-- Exaple 1 -->
+
+  </div>
+  <!-- Grid column -->
+  <!-- Grid column -->
+  <div class="col-md-3 mb-4">
+
+    <!-- Exaple 1 -->
+    <div class="card example-1 square scrollbar-cyan bordered-cyan" style="background-image: url('assets/wt3.webp');">
+      <div class="card-body">
+        <h3 id="section1" style="font-family: 'Noto Sans', sans-serif; color: aliceblue;"><img src="assets/cooking.png" alt="" style="height: 30px;width:30px;"><strong>  Kitchen</strong></h3>
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-primary" *ngFor="let kitchen of kitchenList;let index = index;" ><img src="{{kitchen.img}}" alt="" style="height: 50px; width:50px; margin-right:10px;">{{kitchen.name}} - {{kitchen.price}}
+           
+          </li>
+          
+        </ul>
+        <a href=""style="color: aliceblue; font-weight: 500;">Total: {{sum}}</a><br>
+      </div>
+    </div>
+    <!-- Exaple 1 -->
+
+  </div>
+  <!-- Grid column -->
+
+</div>
+<!-- Grid row -->
+<!-- Remove the container if you want to extend the Footer to full width. -->
+<div class="container-fluid my-5">
+
+  <!-- Footer -->
+  <footer
+          class="text-center text-lg-start text-white"
+          style="background-color: #1c2331"
+          >
+    <!-- Section: Social media -->
+    <section
+             class="d-flex justify-content-between p-4"
+             style="background-color: #6351ce"
+             >
+      <!-- Left -->
+      <div class="me-5">
+        <span>Get connected with us on social networks:</span>
+      </div>
+      <!-- Left -->
+
+      <!-- Right -->
+      <div>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold">Company name</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              Here you can use rows and columns to organize your footer
+              content. Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Products</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              <a href="#!" class="text-white">MDBootstrap</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">MDWordPress</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">BrandFlow</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Bootstrap Angular</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Useful links</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              <a href="#!" class="text-white">Your Account</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Become an Affiliate</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Shipping Rates</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Help</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Contact</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+            <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
+            <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+            <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div
+         class="text-center p-3"
+         style="background-color: rgba(0, 0, 0, 0.2)"
+         >
+      © 2020 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/"
+         >MDBootstrap.com</a
+        >
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+</div>
+<!-- End of .container -->
+
+
+
+
+
+
+
+</div>
+
+  <!-- Grid column -->
+
+  <!-- Grid column -->
+ 
+
+
+
+<!--
+
+<div class="row">
+     <div class="col-lg-3">
+       <h3 style="margin-left:20px; margin-top: 40px; font-family: sans-serif,Arial, Helvetica, sans-serif; color:aliceblue; background-color: blue; text-align: center;">Menu</h3>
+      <div class="card" style="width:300px; margin-left: 40px; margin-top: 20px; background-image: url('assets/back2.webp')"  *ngFor="let menu of menuList;let index = index;">
+        <img class="card-img-top" src="{{menu.img}}" alt="Card image" style="height: 100px;width:100px; margin-left:50px; margin-top:30px;">
+        <div class="card-body">
+          <h4 class="card-title">{{menu.name}}</h4>
+          <p class="card-text">{{menu.price}}.00 Rs</p>
+          <a href="#" class="btn btn-primary" (click)="selectItem(index); billCounter(index)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+            <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+          </svg></a>
+        </div>
+      </div>
+     </div>
+     
+     
+     <div class="col-lg-3" style="margin-left: 120px;">
+      <h3 style="margin-left:20px; margin-top: 40px; font-family: sans-serif,Arial, Helvetica, sans-serif; color:aliceblue; background-color: blue; text-align: center;">Cart</h3>
+      <ul class="list-group bor">
+        <li class="list-group-item" *ngFor="let cart of cartList;let index = index;" style="margin-left: 20px;">{{cart.name}} - {{cart.price}}
+          <button type="button" class="btn btn-danger btn-float-right" (click)="delete(index);"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+            <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+          </svg></button>
+        </li>
+      </ul>
+      <a href="" style="color: solid green;background-color:white; border: 2px solid black; font-size: 20px; font-weight: 600; margin-left: 20px;;">Total: {{totalCount}}</a><br>
+      <button type="button" class="btn btn-primary" (click)="selectItem_2();" style="margin-top: 20px; margin-left: 20px;">PlaceOrder</button>
+     </div>
+     <div class="col-lg-3" style="margin-left: 120px;">
+      <h3 style="margin-left:20px; margin-top: 40px; font-family: sans-serif,Arial, Helvetica, sans-serif; color:aliceblue; background-color: blue; text-align: center;">Kitchen</h3>
+      <a href="" style="color: solid green;background-color:white; border: 2px solid black; font-size: 20px; font-weight: 600; margin-left: 20px;;">Total: {{sum}}</a><br>
+      <ul class="list-group bor" *ngFor="let kitchen of kitchenList;let index = index;">
+        <li class="list-group-item">{{kitchen.name}} - {{kitchen.price}}
+          
+        </li>
+      </ul>
+      
+     </div>
+     
+</div>
+-->
+ 
+ <!--<div class="row" style="padding-left: 60px;">
+      <div class="col-lg-4" class="bg-image"
+      style="
+        background-image: url('assets/m6.jpeg');
+        width: 60vh;
+        height: 100vh;
+      ">
+          <h2>Menu List</h2>
+          <div class="list-group" style="margin-left: 13px;margin-top:30px; margin-right: 13px;">
+              <a class="list-group-item list-group-item-action" (click)="selectItem(index);" *ngFor="let menu of menuList;let index = index;">{{menu.name}} - {{menu.price}}</a>
+            </div>
+      </div>
+      <div class="col-lg-4" class="bg-image"style="background-image: url('assets/m6.jpeg');width: 60vh; height: 100vh;">
+          <h2>Menu Cart</h2>
+          <div class="list-group" style="margin-left: 13px;margin-top:30px; margin-right: 13px;">
+              <a class="list-group-item list-group-item-action" (click)="selectItem_2(index);billCounter(index);" *ngFor="let cart of cartList;let index = index;">{{cart.name}} - {{cart.price}}</a>
+            </div>
+      </div>
+      <div class="col-lg-4"
+      class="bg-image"
+      style="
+        background-image: url('assets/m6.jpeg');
+        width: 60vh;
+        height: 100vh;
+      ">
+          <h2>Kitchen</h2>
+          <div class="list-group" style="margin-left: 13px;margin-top:30px; margin-right: 13px;">
+             <a class="list-group-item list-group-item-action" (click)="placeOrder();"*ngFor="let kitchen of kitchenList;let index = index;">{{kitchen.name}} - {{kitchen.price}}</a>
+             <a class="list-group-item list-group-item-action">Total:{{totalCount}}</a>
+            </div>
+      </div>
+  </div>-->
+
+
+
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Add New Dish</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form class="form-group">
+      <div class="mb-3 mt-3">
+        <label class="form-label">Name:</label>
+        <input type="text" class="form-control" id="email" placeholder="Enter name" [(ngModel)]="name" name="something">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Price:</label>
+        <input type="number" class="form-control" id="pwd" placeholder="Enter price" [(ngModel)]="price" name="something">
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="submit()">Submit</button>
+    </form>
+  </div>
+</ng-template>
